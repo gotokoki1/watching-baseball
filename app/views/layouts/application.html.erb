@@ -19,7 +19,7 @@
         <% if user_signed_in? %>
           <div class= "nav_right">
             <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: :nav__logout %>
-            <%= link_to "観戦仲間募集", class: :nav__btn %>
+            <%= link_to "観戦仲間募集", new_baseball_path, class: :nav__btn %>
           </div>
         <% else %>
           <div class="nav_right">
