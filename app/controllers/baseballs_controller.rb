@@ -17,6 +17,26 @@ class BaseballsController < ApplicationController
   end
 
   def show
+    @baseball = Baseball.find(params[:id])
+  end
+
+  def edit
+    @baseball = Baseball.find(params[:id])
+  end
+
+  def update
+    @baseball = Baseball.find(params[:id])
+    if @baseball.update(baseball_params)
+      redirect_to baseball_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    baseball = Baseball.find(params[:id])
+    baseball.destroy
+    redirect_to root_path
   end
 
   private
