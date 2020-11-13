@@ -1,0 +1,25 @@
+<%= form_with(model: @baseball, local: true) do |f|%>
+  <div class="field">
+    <%= f.label :title, "募集内容のタイトル" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, "募集内容" %><br />
+    <%= f.text_area :content, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :like_team_id, "好きな球団" %><br />
+    <%= f.collection_select(:like_team_id, LikeTeam.all, :id, :name, {}, {class:"select-box"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "好きな選手などの画像" %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "募集する", class: :form__btn  %>
+  </div>
+<% end %>

@@ -1,4 +1,8 @@
 <main class="main">
   <div class="inner">
+    <div class="card__wrapper">
+    <% @baseball.each do |baseball| %>
+      <%= render partial: "baseball", locals: {baseball: baseball} %>
+    <% end %>
   </div>
 </main>
