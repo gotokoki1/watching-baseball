@@ -3,6 +3,12 @@ class CommentsController < ApplicationController
   def create
     @baseball = Baseball.find(params[:baseball_id])
     @comment = @baseball.comments.new(comment_params)
+    if @comment.save
+      redirect_to baseball_path(@baseball)
+    else
+      @comments = @baseball.comments.includes(:user)
+      render "baseball/show"
+    end
   end
 
   private
