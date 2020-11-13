@@ -1,0 +1,17 @@
+<main class="main">
+  <div class="inner">
+    <div class="baseball__wraper">
+      <p class="baseball__headding">
+        <%= @baseball.title%>
+      </p>
+      <%= if user_signed_in? && current_user.id == @baseball.user_id%>
+        <div class="baseball__manage">
+          <%= link_to "編集する", class: :baseball__btn %>
+          <%= link_to "削除する", method: :delete, class: :baseball__btn %>
+        </div>
+      <% end %>
+
+      <div class="baseball__image">
+        <%= image_tag @baseball.image %>
+      </div>
+      
