@@ -1,8 +1,16 @@
 <main class="main">
   <div class="inner">
-    <div class="card__wrapper">
-    <% @baseball.each do |baseball| %>
-      <%= render partial: "baseball", locals: {baseball: baseball} %>
+    <% if user_signed_in? %>
+      <div class="greeting">
+        ようこそ
+        <%= link_to current_user.nickname, "/users/#{current_user.id}", class: :greeting_link %>
+        さん
+      </div>
     <% end %>
+    <div class="card__wrapper">
+      <% @baseball.each do |baseball| %>
+        <%= render partial: "baseball", locals: {baseball: baseball} %>
+      <% end %>
+    </div>
   </div>
 </main>

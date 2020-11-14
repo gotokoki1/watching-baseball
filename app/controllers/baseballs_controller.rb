@@ -1,4 +1,8 @@
 class BaseballsController < ApplicationController
+  before_action :set_baseball, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
+  
   def index
     @baseball = Baseball.includes(:user)
   end
@@ -17,17 +21,14 @@ class BaseballsController < ApplicationController
   end
 
   def show
-    @baseball = Baseball.find(params[:id])
     @comment = Comment.new
     @comments = @baseball.comments.includes(:user)
   end
 
   def edit
-    @baseball = Baseball.find(params[:id])
   end
 
   def update
-    @baseball = Baseball.find(params[:id])
     if @baseball.update(baseball_params)
       redirect_to baseball_path
     else
@@ -45,6 +46,14 @@ class BaseballsController < ApplicationController
 
   def baseball_params
     params.require(:baseball).permit(:title, :content, :like_team_id, :image).merge(user_id: current_user.id)
+  end
+
+  def set_baseball
+     @baseball = Baseball.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to root_path unless current_user == @baseball.user
   end
 
 end

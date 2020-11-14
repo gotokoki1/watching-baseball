@@ -6,8 +6,8 @@
       </p>
       <% if user_signed_in? && current_user.id == @baseball.user_id %>
         <div class="baseball__manage">
-          <%= link_to "編集する", edit_baseball_path(@baseball.user_id), class: :baseball__btn %>
-          <%= link_to "削除する", baseball_path(@baseball.user_id), method: :delete, class: :baseball__btn %>
+          <%= link_to "編集する", edit_baseball_path(@baseball.id), class: :baseball__btn %>
+          <%= link_to "削除する", baseball_path(@baseball.id), method: :delete, class: :baseball__btn %>
         </div>
       <% end %>
 
@@ -45,7 +45,7 @@
           <% @comments.each do |comment| %>
           <li class="comments_list">
             <%= comment.text %>
-            <%= link_to comment.user.nickname, root_path(@baseball.user_id), class: :comment_user %>
+            <%= link_to comment.user.nickname, user_path(@baseball.user_id), class: :comment_user %>
           </li>
           <% end %>
         <% end %>
