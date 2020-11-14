@@ -2,7 +2,8 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :like_team
   has_many :baseballs
-  
+  has_many :comments
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

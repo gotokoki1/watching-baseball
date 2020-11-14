@@ -18,6 +18,8 @@ class BaseballsController < ApplicationController
 
   def show
     @baseball = Baseball.find(params[:id])
+    @comment = Comment.new
+    @comments = @baseball.comments.includes(:user)
   end
 
   def edit
