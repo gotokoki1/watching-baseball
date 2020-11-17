@@ -4,10 +4,11 @@ class CommentsController < ApplicationController
     @baseball = Baseball.find(params[:baseball_id])
     @comment = @baseball.comments.new(comment_params)
     if @comment.save
-      redirect_to baseball_path(@baseball)
+      render json:{ post: @comment.as_json.merge(nickname: @comment.user.nickname)
+    } 
     else
-      @comments = @baseball.comments.includes(:user)
-      render "baseball/show"
+      @comment = Comment.includes(:user)
+      render "baseballs/show"
     end
   end
 
