@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'baseballs#index'
   post 'comments', to: 'comments#create'
   resources :baseballs, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
   end
   resources :users, only: :show
   resources :rooms, only: [:show, :create]
