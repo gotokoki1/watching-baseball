@@ -14,6 +14,21 @@
             <th class="table__col1">好きな球団</th>
             <td class="table__cpl2"><%= @user.like_team.name %></td>
           </tr>
+          <tr>
+            <% if @user.id == current_user.id %>
+            <% else %>
+            <% if @haveRoom == true %>
+            <%= link_to "DM", room_path(@roomId) %>
+            <% else %>
+            <%= form_with model: @room, local: true do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.hidden_field :user_id, value: @user.id %>
+            <% end %>
+              <%= f.submit "DMを送る", class: :form__btn %>
+            <% end %>
+            <% end %>
+            <% end %>
+         </tr>
         <tbody>
       </table>
       <h2 class="page-heading">

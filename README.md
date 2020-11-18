@@ -1,6 +1,6 @@
 # テーブル設計
 
-## users テーブル
+## user テーブル
 
 | Column       | Type    | Option      |
 | ------------ | ------- | ----------- |
@@ -13,8 +13,10 @@
 
 - has_many :baseballs
 - has_many :comments
+- has_many :messages
+- has_many :entries
 
-## baseballs テーブル
+## baseball テーブル
 
 | Column       | Type       | Option                         |
 | ------------ | ---------- | ------------------------------ |
@@ -28,7 +30,7 @@
 - belongs_to :user
 - has_many :comments
 
-## comments テーブル
+## comment テーブル
 
 | Column   | Type       | Option                         |
 | -------- | ---------- | ------------------------------ |
@@ -40,3 +42,38 @@
 
 - belongs_to :user
 - belongs_to :baseball
+
+## room テーブル
+
+| Column | Type | option |
+| ------ | ---- | ------ |
+
+### Association
+
+- has_many :messages
+- has_many :entryies
+
+## entry テーブル
+
+| Column | Type       | Option                         |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+## message テーブル
+
+| Column  | Type       | Option                         |
+| ------- | ---------- | ------------------------------ |
+| message | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room

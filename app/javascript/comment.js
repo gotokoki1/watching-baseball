@@ -13,7 +13,6 @@ function comment() {
         return null;
       }
       const item = XHR.response.post;
-      console.log(item);
       const list = document.getElementById("list");
       const formText = document.getElementById("text");
       const url = ` /users/${item.user_id}`;

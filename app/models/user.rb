@@ -3,6 +3,8 @@ class User < ApplicationRecord
   belongs_to :like_team
   has_many :baseballs
   has_many :comments
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
