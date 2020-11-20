@@ -13,6 +13,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    binding.pry
+    @baseball = Baseball.find(params[:baseball_id])
+    @comment = @baseball.comments.find(params[:id])
+    @comment.destroy
+      render json:{ id: @comment }
   end
 
   private

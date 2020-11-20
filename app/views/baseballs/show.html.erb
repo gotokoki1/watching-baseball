@@ -41,13 +41,14 @@
         <% end %>
       <% end %>
       <ul class="comments_lists">
-        <% if @comments %>
-          <% @comments.each do |comment| %>
+        <% if @baseball.comments %>
+          <% @baseball.comments.each do |comment| %>
           <div id="list"></div>
           <div id="user"></div>
-          <li class="comments_list">
+          <li data-id=‘1’, class="comments_list">
             <%= comment.text %>
             <%= link_to comment.user.nickname, user_path(@baseball.user_id), class: :comment_user %>
+            <%= link_to "削除", '#', method: :delete, class: :comment_user %>
           </li>
           <% end %>
         <% end %>
