@@ -1,5 +1,7 @@
 <div class="card">
-    <%= link_to image_tag(baseball.image, class: :card__img), baseball_path(baseball.id) %>
+<% if baseball.image.attached? %>
+  <%= link_to image_tag(baseball.image, class: :card__img), baseball_path(baseball.id) %> 
+<% end %>
   <div class="card__body">
     <%= link_to baseball.title, baseball_path(baseball.id), class: :card__title %>
     <p class="card__summary">  

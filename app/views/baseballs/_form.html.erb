@@ -1,4 +1,5 @@
 <%= form_with(model: @baseball, local: true) do |f|%>
+<%= render 'shared/error_messages', model: f.object %>
   <div class="field">
     <%= f.label :title, "募集内容のタイトル" %><br />
     <%= f.text_field :title %>

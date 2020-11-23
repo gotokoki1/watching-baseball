@@ -1,15 +1,15 @@
-<h1>DM</h1>
+<h1 class="dm">ここは参加者の方でメッセージのやり取りができます。</h1>
 
-<h4>参加者</h4>
+<h4 class="dm1">参加者</h4>
 <% @entries.each do |e| %>
-  <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.nickname %>さん</a></strong>
+  <h5><strong><a href="/users/<%= e.user.id %>", class="dm2"><%= e.user.nickname %>さん</a></strong>
 <% end %>
 
 <hr>
 <% if @messages.present? %>
   <% @messages.each do |m| %>
-    <strong><%= m.message %></strong>
-    <small>by<strong><a href="/users/<%= m.user_id %>"><%= m.user.nickname %>さん<a>
+    <strong class="dm3"><%= m.message %></strong>
+    <strong><a href="/users/<%= m.user_id %>", class="dm3"><%= m.user.nickname %>さん<a>
     <hr>
   <% end %>
 <% else %>

@@ -12,7 +12,9 @@
       <% end %>
 
       <div class="baseball__image">
+      <% if @baseball.image.attached? %>
         <%= image_tag @baseball.image %>
+      <% end %>
       </div>
       <div class="baseball__body">
         <div class="baseball__detail">
@@ -21,12 +23,12 @@
             <%= @baseball.content%>
           </p>
         </div>
-        <div class="baseball__detail">
+        <%# <div class="baseball__detail">
           <p class="detail__title"><p>
           <p class="detail__message">
-            <%= @baseball.like_team.name %>
-          </p>
-        </div>
+            <%= @baseball.like_team %>
+          <%# </p>
+        </div> %> 
       </div>
      <div class="baseball__comments">
       <% if user_signed_in? %>
