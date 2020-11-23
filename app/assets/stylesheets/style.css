@@ -34,13 +34,17 @@ a {
   color: #3b4043;
 }
 
-/* ヘッダー */
+body {
+  background-image: url("coors-field-4046946_1920.png");
+  width: 100vw;
+  height: 100vh;
+}
 
 .header {
   background-color: #f1f8fe;
   margin-bottom: 48px;
   padding: 20px 0;
-
+  background-color: transparent;
 }
 
 .inner {
@@ -58,14 +62,19 @@ a {
   width: 200px;
 }
 
+.nav_left {
+  color: #fff;
+  font-size: 20px;
+}
+
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #fff;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #fff solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -79,13 +88,25 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #fff;
   text-decoration: none;
   user-select: none;
 }
 
 .nav__logout:hover{
   opacity: 0.5;
+}
+
+.overview {
+  color: #0ff;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.overview-content {
+  color: #99FFFF;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .select-box {
@@ -109,6 +130,7 @@ a {
 
 .field{
   margin: 10px 0;
+  color: #fff;
 }
 
 .actions{
@@ -136,15 +158,18 @@ a {
 
 .greeting{
   margin-bottom: 20px;
+  font-size: 20px;
+  color: #00F9A9;
 }
 
 .greeting__link{
-  text-decoration: underline;
+  color: #FF8C00;
 }
 
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
+  color: #111111;
 }
 
 .card__wrapper {
@@ -171,6 +196,10 @@ a {
   font-weight: bold;
 }
 
+.card__body {
+  color: #fff;
+}
+
 .card__summary {
   font-size: 16px;
 }
@@ -191,6 +220,7 @@ a {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  color: #111111;
 }
 
 .baseball__user {
@@ -217,6 +247,10 @@ a {
 .detail__title {
   font-size: 20px;
   font-weight: bold;
+}
+
+.detail__message {
+  color: #111111;
 }
 
 .baseball__manage {

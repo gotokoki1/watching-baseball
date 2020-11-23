@@ -20,6 +20,7 @@ function comment() {
       <li class="comments_list">
       ${item.text}
       <a href=${url} class='comment_user'>${item.nickname}</a>
+      <span class="delete_comment" >削除</span>
       </li>`;
       list.insertAdjacentHTML("afterend", HTML);
       formText.value = "";

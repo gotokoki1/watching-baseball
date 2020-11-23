@@ -12,6 +12,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @baseball = Baseball.find(params[:baseball_id])
+    @comment = @baseball.comments.find(params[:id])
+    if current_user == @comment.user
+      @comment.destroy
+      render json: true
+    end
+  end
+
   private
 
   def comment_params
