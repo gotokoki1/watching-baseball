@@ -53,7 +53,9 @@ class BaseballsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path unless current_user == @baseball.user
+    unless current_user == @baseball.user
+    redirect_to root_path 
+    end
   end
 
 end

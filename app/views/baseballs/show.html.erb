@@ -24,7 +24,7 @@
         <div class="baseball__detail">
           <p class="detail__title"><p>
           <p class="detail__message">
-            <%= @baseball.like_team_id %>
+            <%= @baseball.like_team.name %>
           </p>
         </div>
       </div>
@@ -40,15 +40,15 @@
           </div>
         <% end %>
       <% end %>
-      <ul class="comments_lists">
+      <ul data-baseball=<%= params[:id] %> class="comments_lists">
         <% if @baseball.comments %>
           <% @baseball.comments.each do |comment| %>
           <div id="list"></div>
           <div id="user"></div>
-          <li data-id=‘1’, class="comments_list">
+          <li data-id=<%= comment.id %> class="comments_list">
             <%= comment.text %>
             <%= link_to comment.user.nickname, user_path(@baseball.user_id), class: :comment_user %>
-            <%= link_to "削除", '#', method: :delete, class: :comment_user %>
+            <span class="delete_comment">削除</span>
           </li>
           <% end %>
         <% end %>
