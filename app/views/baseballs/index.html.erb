@@ -14,6 +14,11 @@
     <div class="card__wrapper">
       <% @baseball.each do |baseball| %>
         <%= render partial: "baseball", locals: {baseball: baseball} %>
+        <%# <% if current_user.liked_by?(@baseball) %>
+        <%# <%= button_to 'いいねを外す', baseball_like_path(@baseball.ids, baseball.likes), method: :delete %> 
+        <%# <% else %> 
+        <%# <td><%= button_to 'いいね', baseball_likes_path(@baseball.ids, baseball.likes), method: :post %>
+        <%# <% end %> 
       <% end %>
     </div>
   </div>

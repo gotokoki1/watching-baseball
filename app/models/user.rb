@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :likes
 
+  # def liked_by?(baseball.id)
+  #   likes.exists?(baseball_id: baseball_id)
+  # end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
