@@ -16,6 +16,7 @@
           <div class="nav_left">
             <%= link_to image_tag("baseball_logo.png"), root_path, class: :"nav_left" %>
           </div>
+          <h1 class="nav-center">Watching Baseball</h1>
         <% if user_signed_in? %>
           <div class= "nav_right">
             <%= current_user.nickname %>
@@ -33,7 +34,7 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <div class="container">footer</div>
+      <div class="container">Watching Baseball</div>
     </footer>
   </body>
 </html>
