@@ -21,6 +21,7 @@ class BaseballsController < ApplicationController
   end
 
   def show
+    @like_users = @baseball.like_users
     @comment = Comment.new
     @comments = @baseball.comments.includes(:user)
   end

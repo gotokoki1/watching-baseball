@@ -7,6 +7,9 @@
     <p class="card__summary">  
       <%= baseball.content %>
     </p>
+    <div id="likes_<%= baseball.id %>">
+      <%= render partial: 'likes/like', locals: { baseball: baseball } %>
+    </div>
     <%= link_to baseball.user.nickname + "さんのマイページ", "/users/#{baseball.user.id}", class: :card__user %>
   </div>
 </div>

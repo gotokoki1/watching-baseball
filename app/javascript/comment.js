@@ -1,6 +1,8 @@
+import {listsWrapper} from './comment_destroy';
+
 function comment() {
   const submit = document.getElementById("submit");
-  const pathId = document.querySelector('#form').dataset.post;
+  const pathId = document.querySelector('.form').dataset.post;
   submit.addEventListener("click", (e) => {
     const formData = new FormData(document.getElementById("form"));
     const XHR = new XMLHttpRequest();
@@ -20,12 +22,16 @@ function comment() {
       <li class="comments_list">
       ${item.text}
       <a href=${url} class='comment_user'>${item.nickname}</a>
-      <span class="delete_comment" >削除</span>
+      <span class="delete_comment" data-comment=${item.id} >削除</span>
       </li>`;
       list.insertAdjacentHTML("afterend", HTML);
       formText.value = "";
+
+
+      listsWrapper();
     };
     e.preventDefault();
   });
 }
+
 window.addEventListener("load", comment);

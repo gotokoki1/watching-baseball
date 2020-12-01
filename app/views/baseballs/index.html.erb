@@ -1,19 +1,15 @@
 <main class="main">
+  <div class='first-view'>
+    <div class='first-view-comments'>
+      <h2 class="overview">野球観戦に一緒に行ってくる人を探そう！</h2>
+      <p class="overview-content">どの試合観戦なのか、どんな人と観戦に行きたいのかを記載して募集してください。</p>
+      <p class="overview-content">募集内容に対して、コメントまたはDMを送って交流しましょう！</p>
+      <p class="overview-content">※誹謗中傷する様なコメント・DMはやめてください。</p>
+    </div>
+  </div>
   <div class="inner">
-    <% if user_signed_in? %>
-      <div class="greeting">
-        ようこそ
-        <%= link_to current_user.nickname, "/users/#{current_user.id}", class: :greeting__link %>
-        さん
-      </div>
-    <% end %>
-    <h2 class="overview">野球観戦に一緒に行ってくる人を探そう！</h2>
-    <p class="overview-content">どの試合観戦なのか、どんな人と観戦に行きたいのかを記載して募集してください。</p>
-    <p class="overview-content">募集内容に対して、コメントまたはDMを送って交流しましょう！</p>
-    <p class="overview-content">※誹謗中傷する様なコメント・DMはやめてください。</p>
-    <div class="card__wrapper">
       <% @baseball.each do |baseball| %>
-        <%= render partial: "baseball", locals: {baseball: baseball} %>
+        <%= render partial: "baseball", locals: { baseball: baseball } %>
       <% end %>
     </div>
   </div>

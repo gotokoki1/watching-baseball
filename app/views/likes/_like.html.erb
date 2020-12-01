@@ -1,0 +1,11 @@
+<%if user_signed_in? %>
+    <% if current_user.like_baseballs.include?(baseball) %>
+      <%= link_to baseball_likes_path(baseball.id), class: "like-link", method: :delete, remote: true do%> <%= baseball.likes.count %>
+      <i class="fas fa-heart unlike-btn"></i>
+      <% end %>
+    <% else %>
+      <%= link_to baseball_likes_path(baseball.id), class: "like-link", method: :post, remote: true do%> <%= baseball.likes.count  %>
+      <i class="fas fa-heart like-btn"></i>
+      <% end %>
+    <% end %>
+ <% end %> 

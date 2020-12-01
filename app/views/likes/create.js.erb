@@ -1,0 +1,1 @@
+document.getElementById("likes_<%= @baseball.id %>").innerHTML = "<%= j(render partial: 'likes/like',locals: { baseball: @baseball }) %>";
