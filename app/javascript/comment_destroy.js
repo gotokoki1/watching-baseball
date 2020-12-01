@@ -17,7 +17,8 @@ function handleDelete(e) {
   XHR.send(formData);
 }
 
-function listsWrapper(){
+export function listsWrapper(){
+  console.log('hoge');
   const lists = document.querySelectorAll('.comments_list');
   console.log(lists);
   lists.forEach(function(list) {
@@ -26,4 +27,4 @@ function listsWrapper(){
 }
 
 document.addEventListener('DOMContentLoaded', listsWrapper);
-document.addEventListener('change', listsWrapper);
+
