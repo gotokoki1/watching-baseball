@@ -20,6 +20,10 @@ body {
   color: #3b4043;
 }
 
+.container {
+  margin: 0 24px;
+}
+
 li {
   list-style: none;
 }
@@ -35,27 +39,47 @@ a {
 }
 
 body {
-  background-image: url("coors-field-4046946_1920.png");
+  /* background-image: url("coors-field-4046946_1920.png"); */
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
+}
+
+.first-view {
+  background-image: url("coors-field-4046946_1920.png");
+  height: 400px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+}
+
+.first-view-comments {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  backdrop-filter: blur(4px);
 }
 
 .header {
-  background-color: #f1f8fe;
-  margin-bottom: 48px;
+  background-color: white;
   padding: 20px 0;
-  background-color: transparent;
 }
 
 .inner {
-  width: 1024px;
-  margin: 0 auto;
+  display: flex;
+  margin-top: 24px;
+  margin: 24px auto 0;
+  flex-wrap: wrap;
+  padding: 0 20px;
 }
 
 .nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -63,7 +87,6 @@ body {
 }
 
 .nav_left {
-  height: 50px;
   width: 100px;
 }
 
@@ -71,7 +94,6 @@ body {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #fff;
   text-decoration: none;
   user-select: none;
   border: 1px #fff solid;
@@ -80,7 +102,7 @@ body {
 }
 
 .nav__btn:hover{
-  color: #fff;
+  opacity: 0.8;
   background: #87CEFA;
 }
 
@@ -88,7 +110,7 @@ body {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
   user-select: none;
 }
@@ -98,13 +120,13 @@ body {
 }
 
 .overview {
-  color: #0ff;
+  /* color: #0ff; */
   text-align: center;
   padding-bottom: 10px;
 }
 
 .overview-content {
-  color: #99FFFF;
+  /* color: #99FFFF; */
   text-align: center;
   padding-bottom: 10px;
 }
@@ -181,8 +203,12 @@ body {
 }
 
 .card {
-  width: calc((100% - 50px) / 3);
-  margin-bottom: 40px;
+  width: calc((100% /3) - 24px );
+  padding: 20px;
+  margin: 12px;
+  border: 1px solid rgba(0,0,0, .4);
+  border-radius: 12px;
+  box-shadow: 0px 1px 9px;
 }
 
 .card__img {
@@ -208,7 +234,7 @@ body {
 .card__user {
   display: block;
   font-size: 12px;
-  color: #00FF00;
+  color: #0088ff;
   text-align: right;
   text-decoration: underline;
 }
@@ -372,4 +398,22 @@ body {
 
 .error-alert {
   color: red;
+}
+
+.like-link {
+  text-decoration: none;
+}
+
+.like-link:hover {
+  background-color: #fff!important;
+}
+
+.like-btn {
+  font-size: 15px;
+  color: #808080;
+}
+ 
+.unlike-btn {
+  font-size: 15px;
+  color: #e54747;
 }

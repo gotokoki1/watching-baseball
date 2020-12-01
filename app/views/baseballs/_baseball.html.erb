@@ -7,13 +7,9 @@
     <p class="card__summary">  
       <%= baseball.content %>
     </p>
-    <%if user_signed_in? %>
-    <% if baseball.liked_by?(current_user) %>
-      <%= button_to 'いいねを外す', baseball_like_path(baseball.id, baseball.likes), method: :delete, remote: true %> <%= baseball.likes.count %>
-    <% else %>
-      <td><%= button_to 'いいね', baseball_likes_path(baseball.id, baseball.likes), method: :post,remote: true %></td> <%= baseball.likes.count %>
-    <% end %>
-    <% end %>
+    <div id="likes_<%= baseball.id %>">
+      <%= render partial: 'likes/like', locals: { baseball: baseball } %>
+    </div>
     <%= link_to baseball.user.nickname + "さんのマイページ", "/users/#{baseball.user.id}", class: :card__user %>
   </div>
 </div>

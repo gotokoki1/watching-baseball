@@ -23,16 +23,10 @@
             <%= @baseball.content%>
           </p>
         </div>
-        <%# <div class="baseball__detail">
-          <p class="detail__title"><p>
-          <p class="detail__message">
-            <%= @baseball.like_team %>
-          <%# </p>
-        </div> %> 
       </div>
      <div class="baseball__comments">
       <% if user_signed_in? %>
-        <%= form_with model: [@baseball, @comment], method: :post, id: "form",  data: { post: @baseball.id } do |f| %>
+        <%= form_with model: [@baseball, @comment], method: :post, id: "form", class: :form, data: { post: @baseball.id } do |f| %>
           <div class="field">
             <%= f.label :text, "コメント" %><br />
             <%= f.text_field :text, id: "text" %>
@@ -47,10 +41,10 @@
           <% @baseball.comments.each do |comment| %>
           <div id="list"></div>
           <div id="user"></div>
-          <li data-id=<%= comment.id %> class="comments_list">
+          <li>
             <%= comment.text %>
             <%= link_to comment.user.nickname, user_path(@baseball.user_id), class: :comment_user %>
-            <span class="delete_comment">削除</span>
+            <span data-comment=<%= comment.id %> class="comments_list">削除</span>
           </li>
           <% end %>
         <% end %>
