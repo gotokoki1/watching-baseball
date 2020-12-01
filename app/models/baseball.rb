@@ -7,8 +7,4 @@ class Baseball < ApplicationRecord
 
   validates :like_team_id, numericality: { other_than: 1 } 
   validates :title, :content, presence: true
-
-  def likes?(user)
-    likes.where(user_id: user.id).exists?
-  end
 end

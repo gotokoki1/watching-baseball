@@ -1,7 +1,6 @@
 class BaseballsController < ApplicationController
   before_action :set_baseball, only: [:show, :edit, :update]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  # before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
     @baseball = Baseball.includes(:user)
@@ -52,11 +51,4 @@ class BaseballsController < ApplicationController
   def set_baseball
      @baseball = Baseball.find(params[:id])
   end
-
-  # def move_to_index
-  #   unless current_user.id == @baseball.user_id
-  #   redirect_to action: :index
-  #   end
-  # end
-
 end
