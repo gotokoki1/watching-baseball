@@ -10,6 +10,7 @@
   <% @messages.each do |m| %>
     <strong class="dm3"><%= m.message %></strong>
     <strong><a href="/users/<%= m.user_id %>", class="dm3"><%= m.user.nickname %>さん<a>
+    <%= link_to "削除", message_path(m.id), method: :delete %> 
     <hr>
   <% end %>
 <% else %>
