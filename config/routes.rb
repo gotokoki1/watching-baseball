@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :rooms, only: [:show, :create]
-  resources :messages, only: :create
+  resources :messages, only: [:create, :destroy]
 end

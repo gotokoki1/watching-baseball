@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
 
-
   def create
     @room = Room.find(params[:message][:room_id])
     @message = Message.new
@@ -11,6 +10,14 @@ class MessagesController < ApplicationController
       else
         redirect_back(fallback_location: root_path)
       end
+  end
+
+  def destroy
+    message = Message.find(params[:id])
+    if message.user_id == current_user.id
+      message.destroy
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private
