@@ -16,6 +16,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :tag_list, "タグ" %><br />
+    <%= f.text_field :tag_list, value: @baseball.tag_list.join(',') %>
+  </div>
+
+  <div class="field">
     <%= f.label :image, "好きな選手などの画像" %><br />
     <%= f.file_field :image %>
   </div>

@@ -5,6 +5,11 @@ class BaseballsController < ApplicationController
   def index
     @baseball = Baseball.includes(:user)
     @baseballs = Baseball.page(params[:page]).per(5).order('updated_at DESC')
+    @tags = Baseball.tag_counts_on(:tags).order('count DESC')
+    if params[:tag_name]
+      Baseball.tagged_with("#{params[:tag]}")
+    end
+    @tags = Baseball.tag_counts_on(:tags).order('count DESC')
   end
 
   def new
@@ -46,7 +51,7 @@ class BaseballsController < ApplicationController
   private
 
   def baseball_params
-    params.require(:baseball).permit(:title, :content, :like_team_id, :image).merge(user_id: current_user.id)
+    params.require(:baseball).permit(:title, :content, :like_team_id, :image, :tag_list).merge(user_id: current_user.id)
   end
 
   def set_baseball
