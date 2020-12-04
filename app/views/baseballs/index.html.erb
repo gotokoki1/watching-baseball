@@ -11,7 +11,12 @@
       <% @baseballs.each do |baseball| %>
         <%= render partial: "baseball", locals: { baseball: baseball } %>
       <% end %>
-        <%# <%= paginate @baseballs %> 
+  </div>
+  <div class="tag-list">
+    <h3 class="tag">タグ一覧</h3>
+    <% @tags.each do |tag| %>
+      <%= link_to tag.name,  baseballs_path(tag_name: tag) %>
+    <% end %>
   </div>
   <div class="paginate"><%= paginate @baseballs %></div>
 </main>
