@@ -425,3 +425,8 @@ footer {
   font-style: oblique;
   font-family: cursive;
 }
+
+.pagination {
+  text-align: center;
+  font-size: 20px;
+}

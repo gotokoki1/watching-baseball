@@ -4,6 +4,7 @@ class BaseballsController < ApplicationController
   
   def index
     @baseball = Baseball.includes(:user)
+    @baseballs = Baseball.page(params[:page]).per(5).order('updated_at DESC')
   end
 
   def new
