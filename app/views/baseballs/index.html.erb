@@ -8,9 +8,10 @@
     </div>
   </div>
   <div class="inner">
-      <% @baseball.each do |baseball| %>
+      <% @baseballs.each do |baseball| %>
         <%= render partial: "baseball", locals: { baseball: baseball } %>
       <% end %>
-    </div>
+        <%# <%= paginate @baseballs %> 
   </div>
+  <div class="paginate"><%= paginate @baseballs %></div>
 </main>
