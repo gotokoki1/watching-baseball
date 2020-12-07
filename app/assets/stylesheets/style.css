@@ -43,7 +43,7 @@ body {
 }
 
 .first-view {
-  background-image: image-url('../coors-field-4046946_1920.png');
+  background-image: url('coors-field-4046946_1920.png');
   height: 400px;
   padding: 20px 0;
   display: flex;
