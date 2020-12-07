@@ -48,6 +48,10 @@ class BaseballsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @baseballs = Baseball.search(params[:keyword])
+  end
+
   private
 
   def baseball_params

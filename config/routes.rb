@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   post 'likes', to: 'likes#create'
   resources :baseballs do
     resources :comments, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
   resources :baseballs do
     resource :likes, only: [:create, :destroy]
   end
-  resources :users, only: :show
+  resources :users, only: [:show, :search]
   resources :rooms, only: [:show, :create]
   resources :messages, only: [:create, :destroy]
 end
