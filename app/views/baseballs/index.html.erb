@@ -7,6 +7,12 @@
       <p class="overview-content">※誹謗中傷する様なコメント・DMはやめてください。</p>
     </div>
   </div>
+  <div class="search">
+    <%= form_with(url: search_baseballs_path, local: true, method: :get) do |form| %>
+      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+  </div>
   <div class="inner">
       <% @baseballs.each do |baseball| %>
         <%= render partial: "baseball", locals: { baseball: baseball } %>
@@ -15,7 +21,7 @@
   <div class="tag-list">
     <h3 class="tag">タグ一覧</h3>
     <% @tags.each do |tag| %>
-      <%= link_to tag.name,  baseballs_path(tag_name: tag) %>
+      <%= link_to tag.name, baseballs_path(tag_name: tag), class: :tag_name %>
     <% end %>
   </div>
   <div class="paginate"><%= paginate @baseballs %></div>
