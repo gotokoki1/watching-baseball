@@ -6,7 +6,6 @@ function handleDelete(e) {
   const XHR = new XMLHttpRequest();
   XHR.open("DELETE", `/baseballs/${baseballId}/comments/${id}`, true);
   XHR.responseType = "json";
-  // XHR.send(formData); 
   XHR.onload = () => {
     if (XHR.status != 200) {
       alert(`Error ${XHR.status}: ${XHR.statusText}`);
@@ -18,7 +17,6 @@ function handleDelete(e) {
 }
 
 export function listsWrapper(){
-  console.log('hoge');
   const lists = document.querySelectorAll('.comments_list');
   console.log(lists);
   lists.forEach(function(list) {
