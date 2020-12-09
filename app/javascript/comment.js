@@ -2,7 +2,7 @@ import {listsWrapper} from './comment_destroy';
 
 function comment() {
   const submit = document.getElementById("submit");
-  const pathId = document.querySelector('.form').dataset.post;
+  const pathId = document.querySelector('#form').dataset.post;
   submit.addEventListener("click", (e) => {
     const formData = new FormData(document.getElementById("form"));
     const XHR = new XMLHttpRequest();
@@ -15,7 +15,7 @@ function comment() {
         return null;
       }
       const item = XHR.response.post;
-      const list = document.getElementById("list");
+      const list = document.getElementsByClassName("comments_lists");
       const formText = document.getElementById("text");
       const url = ` /users/${item.user_id}`;
       const HTML = `
@@ -24,7 +24,7 @@ function comment() {
       <a href=${url} class='comment_user'>${item.nickname}</a>
       <span class="delete_comment" data-comment=${item.id} >削除</span>
       </li>`;
-      list.insertAdjacentHTML("afterend", HTML);
+      list[0].insertAdjacentHTML("afterend", HTML);
       formText.value = "";
 
 

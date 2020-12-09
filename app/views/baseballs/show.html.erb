@@ -41,7 +41,7 @@
           <% @baseball.comments.each do |comment| %>
           <div id="list"></div>
           <div id="user"></div>
-          <li>
+          <li class="comments_list">
             <%= comment.text %>
             <%= link_to comment.user.nickname, user_path(@baseball.user_id), class: :comment_user %>
             <span data-comment=<%= comment.id %> class="comments_list">削除</span>
