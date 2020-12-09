@@ -91,3 +91,5 @@
 
 - belongs_to :user
 - belongs_to :baseball
+
+![ER](erd.jpg)
