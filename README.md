@@ -18,10 +18,8 @@ AWS
 # 開発環境
 Ruby,Rubyonrails,javascript,mysql
 
-#DEMO
-<p align="center">
-  <img src="https://gyazo.com/ae51f2d2ac263d4efb71643b83fba707" width=70%>  
-</p>　
+# DEMO
+![DEMO](https://gyazo.com/ae51f2d2ac263d4efb71643b83fba707)
 
 # 工夫したポイント
 非同期機能を実装してみたかったので、コメント・いいねボタン
