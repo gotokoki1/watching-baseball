@@ -19,7 +19,8 @@ AWS
 Ruby,Rubyonrails,javascript,mysql
 
 # DEMO
-![DEMO](https://gyazo.com/ae51f2d2ac263d4efb71643b83fba707)
+![ae51f2d2ac263d4efb71643b83fba707](https://user-images.githubusercontent.com/72792963/107873124-4f365080-6ef3-11eb-9ec7-405979cd8a96.gif)
+
 
 # 工夫したポイント
 非同期機能を実装してみたかったので、コメント・いいねボタン
