@@ -21,7 +21,7 @@ AWS
 Ruby,Rubyonrails,javascript,mysql
 
 # DEMO
-![ae51f2d2ac263d4efb71643b83fba707](https://user-images.githubusercontent.com/72792963/107873124-4f365080-6ef3-11eb-9ec7-405979cd8a96.gif)
+[![Image from Gyazo](https://i.gyazo.com/ad7547eaad9d3d49e65800a25d44ffd2.gif)](https://gyazo.com/ad7547eaad9d3d49e65800a25d44ffd2)
 
 
 # 工夫したポイント
